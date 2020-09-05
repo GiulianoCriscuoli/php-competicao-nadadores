@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,19 @@
     <p>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</p>
 
     <form action="index.php" method="POST">
-        <label>    
+        <?php
+            if(!empty($_SESSION['error'])) {
+
+                echo $_SESSION['error'];
+                echo $_SESSION['error'] = '';
+
+            } else if(!empty($_SESSION['success'])) {
+
+                echo $_SESSION['success'];
+                echo $_SESSION['success'] = '';
+            }
+        ?>
+        <br/><label>    
          Nome
          <input type="text" name="name" />
     
