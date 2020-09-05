@@ -5,13 +5,13 @@ $categories[] = 'Infantil';
 $categories[] = 'Adolescente';
 $categories[] = 'Adulto';
 
-$name = 'Giuliano';
-$age = 16;
+$name = $_POST['name'];
+$age = $_POST['age'];
 
 
 if($age >= 6 && $age <= 12) {
 
-    for($i = 0; $i <= count($categories); $i++) {
+    for($i = 0; $i < sizeof($categories); $i++) {
 
         if($categories[$i] === 'Infantil') {
 
@@ -19,9 +19,9 @@ if($age >= 6 && $age <= 12) {
         }
     }
 
-} else if($age >= 13 && $age <= 18) {
+} else if($age >= 13 && $age <= 17) {
 
-    for($i = 0; $i <= count($categories); $i++) {
+    for($i = 0; $i < sizeof($categories); $i++) {
 
         if($categories[$i] === 'Adolescente') {
 
@@ -32,7 +32,7 @@ if($age >= 6 && $age <= 12) {
 
 } else {
 
-    for($i = 0; $i <= count($categories); $i++) {
+    for($i = 0; $i < sizeof($categories); $i++) {
 
         if($categories[$i] === 'Adulto') {
 
